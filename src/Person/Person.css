@@ -8,9 +8,12 @@
 }
 
 .btnStyle{
-    background-color: white;
+    background-color: green;
     font: inherit;
     border: 1px solid gray;
-    padding: 8px;
+    border-radius: 19px;
+    padding: 8px 15px;
+    color: white;
     cursor: pointer;
+    box-shadow: 0 2px 3px #cccccc;
 }
