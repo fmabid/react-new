@@ -6,9 +6,9 @@ import Person from './Person/Person';
 class App extends Component {
   state = {
     persons: [
-      {name: 'Abid', age: 22},
-      {name: 'Atik', age: 24},
-      {name: 'Shahed', age: 25}
+      {id: 'asfa1', name: 'Abid', age: 22},
+      {id: 'vadf1', name: 'Atik', age: 24},
+      {id: 'asf11', name: 'Shahed', age: 25}
     ],
     otherState: "some other value.",
     showPersons: false
@@ -24,7 +24,7 @@ class App extends Component {
   nameChangedHandler = (event) => {  //   For handling the input event.
     this.setState({
       persons: [
-        {name: "Abid", age: 22},
+        {name: 'Abid', age: 22},
         {name: event.target.value, age: 24},
         {name: 'Shahed', age: 25}
       ]
@@ -45,14 +45,18 @@ class App extends Component {
 
     let persons = null;
 
-    if (this.state.showPersons) {
+    if ( this.state.showPersons ) {
       persons = (
         <div>
           {this.state.persons.map((person, index) => {
-            return <Person
-              click={() => this.deletePersonHandler(index)}
-              name={person.name}
-              age={person.age} />
+            return (
+              <Person
+                click={() => this.deletePersonHandler(index)}
+                name={person.name}
+                age={person.age}
+                key={person.id}
+                changed={(event) => {this.nameChangedHandler(event, person.id)}} />
+            )
           })}
         </div>
       );
