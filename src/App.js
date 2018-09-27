@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './App.css';
 
+import './App.css';
 import Person from './Person/Person';
 
 class App extends Component {
@@ -89,7 +89,6 @@ class App extends Component {
           className="btnStyle"
           onClick={this.tooglePersonsHandler}>Toggle persons</button>
         {persons}
-
       </div>
     );
   }
