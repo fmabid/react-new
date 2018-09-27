@@ -7,18 +7,8 @@
     text-align: center;
 }
 
-.btnStyle{
-    background-color: green;
-    font: inherit;
-    border: 1px solid gray;
-    border-radius: 19px;
-    padding: 8px 15px;
-    color: white;
-    cursor: pointer;
-    box-shadow: 0 2px 3px #cccccc;
-}
-
-.btnStyle:hover {
-    background-color: white;
-    color: #000;
+@media (min-width: 500px) {
+    .Person {
+        width: 450px;
+    }
 }

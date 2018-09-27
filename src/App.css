@@ -10,8 +10,23 @@
   font-weight: bold;
 }
 
-/*
-'@media (min-width: 500px)':{
-      width: '450px'
-    }
-*/
+.App button{
+  background-color: green;
+  font: inherit;
+  border: 1px solid gray;
+  border-radius: 19px;
+  padding: 8px 15px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 2px 3px #cccccc;
+}
+
+.App button:hover {
+  background-color: white;
+  color: #000;
+}
+
+.App button.Black {
+  background-color: black;
+  color: white;
+}
