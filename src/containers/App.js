@@ -5,15 +5,28 @@ import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit';
 
 class App extends Component {
-  state = {
-    persons: [
-      {id: 'asfa1', name: 'Abid', age: 22},
-      {id: 'vadf1', name: 'Atik', age: 24},
-      {id: 'asf11', name: 'Shahed', age: 25}
-    ],
-    otherState: "some other value.",
-    showPersons: false
-  };
+  constructor(props) {
+    super();
+    console.log("[App.js] inside Constructor.", props);
+
+    this.state = {
+      persons: [
+        {id: 'asfa1', name: 'Abid', age: 22},
+        {id: 'vadf1', name: 'Atik', age: 24},
+        {id: 'asf11', name: 'Shahed', age: 25}
+      ],
+      otherState: "some other value.",
+      showPersons: false
+    };
+  }
+
+  componentWillMount() {
+    console.log("[App.js] inside componentWillMount()");
+  }
+
+  componentDidMount() {
+    console.log("[App.js] inside componentDidMount()");
+  }
 
   deletePersonHandler = (personIndex) => {
     // const persons = this.state.persons.slice();
@@ -51,7 +64,7 @@ class App extends Component {
   };
 
   render() {
-
+    console.log("[App.js] inside render()");
     let persons = null;
 
     if ( this.state.showPersons ) {
@@ -64,6 +77,7 @@ class App extends Component {
     return (
       <div className={classes.App}>
         <Cockpit
+          appTitle={this.props.title}
           showPersons={this.state.showPersons}
           persons={this.state.persons}
           clicked={this.tooglePersonsHandler}/>
